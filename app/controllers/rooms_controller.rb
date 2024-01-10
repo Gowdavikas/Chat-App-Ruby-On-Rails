@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
-
-    before_action :load_entities
+  before_action :load_entities
 
   def index
     @rooms = Room.all
@@ -26,8 +25,8 @@ class RoomsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
   def update
     if @room.update_attributes(permitted_parameters)
@@ -38,8 +37,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  protected
-
+  private
   def load_entities
     @rooms = Room.all
     @room = Room.find(params[:id]) if params[:id]
